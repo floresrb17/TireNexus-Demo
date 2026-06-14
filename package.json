@@ -1,0 +1,40 @@
+{
+  "name": "workspace",
+  "version": "1.0.0-demo",
+  "description": "WGI POS portfolio demonstration",
+  "author": "Robert Flores",
+  "license": "SEE LICENSE-DEMO.md",
+  "packageManager": "pnpm@11.1.2",
+  "main": "desktop/main.cjs",
+  "scripts": {
+    "build": "pnpm --filter @workspace/tireshop-pos run build",
+    "demo:api": "node demo-api.cjs",
+    "demo:start": "node demo-api.cjs",
+    "desktop:dev": "pnpm --filter @workspace/tireshop-pos run build && electron desktop/main.cjs",
+    "desktop:pack": "pnpm --filter @workspace/tireshop-pos run build && electron-builder --win --dir",
+    "desktop:build": "pnpm --filter @workspace/tireshop-pos run build && electron-builder --win",
+    "desktop:clean-builds": "node desktop/cleanup-builds.cjs",
+    "desktop:update-package": "pnpm run desktop:build && node desktop/create-local-update.cjs && pnpm run desktop:clean-builds",
+    "mechanic:dev": "electron desktop/mechanic-main.cjs",
+    "mechanic:build-win7": "electron-builder --config electron-builder.mechanic-win7.yml --win",
+    "mechanic:update-package": "pnpm run mechanic:build-win7 && node desktop/create-mechanic-update.cjs",
+    "typecheck": "pnpm --filter @workspace/tireshop-pos run typecheck && pnpm --filter @workspace/api-client-react exec tsc -p tsconfig.json --noEmit"
+  },
+  "private": true,
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "electron": "^33.4.11",
+    "electron-builder": "^25.1.8",
+    "prettier": "^3.8.1",
+    "rcedit": "^5.0.2",
+    "typescript": "~5.9.2"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "electron",
+      "esbuild"
+    ]
+  }
+}

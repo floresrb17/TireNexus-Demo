@@ -1,0 +1,50 @@
+{
+  "nextProductId": 11,
+  "nextSaleId": 4,
+  "nextInventoryMovementId": 1,
+  "nextCustomerProfileId": 4,
+  "nextUserId": 4,
+  "settings": {
+    "storeName": "Demo Tire Shop",
+    "storeAddress": "123 Sample Avenue, Demo City",
+    "storePhone": "555-0100",
+    "companyLogoUrl": "/wheel-got-it-logo.png",
+    "receiptPrefix": "DEMO",
+    "currencySymbol": "PHP",
+    "lowStockThreshold": 3,
+    "taxRatePercent": 0,
+    "autoCapitalizationEnabled": true
+  },
+  "users": [
+    { "id": 1, "username": "admin", "role": "admin", "password": "demo1234" },
+    { "id": 2, "username": "cashier", "role": "cashier", "password": "demo1234" },
+    { "id": 3, "username": "mechanic", "role": "mechanic", "password": "demo1234" }
+  ],
+  "products": [
+    { "id": 1, "brand": "RoadMaster", "name": "Tour Plus", "width": 205, "aspectRatio": 55, "rimSize": 16, "price": 5200, "stock": 18, "barcode": "DM2055516", "category": "tires", "createdAt": "2026-01-15T08:00:00.000Z" },
+    { "id": 2, "brand": "RoadMaster", "name": "Highway Grip", "width": 215, "aspectRatio": 60, "rimSize": 16, "price": 5750, "stock": 4, "barcode": "DM2156016", "category": "tires", "createdAt": "2026-01-15T08:00:00.000Z" },
+    { "id": 3, "brand": "CityTread", "name": "Eco Run", "width": 195, "aspectRatio": 65, "rimSize": 15, "price": 4300, "stock": 22, "barcode": "DM1956515", "category": "tires", "createdAt": "2026-01-15T08:00:00.000Z" },
+    { "id": 4, "brand": "CityTread", "name": "Sport Line", "width": 225, "aspectRatio": 45, "rimSize": 17, "price": 6900, "stock": 7, "barcode": "DM2254517", "category": "tires", "createdAt": "2026-01-15T08:00:00.000Z" },
+    { "id": 5, "brand": "MetroGrip", "name": "All Season", "width": 235, "aspectRatio": 55, "rimSize": 18, "price": 7600, "stock": 3, "barcode": "DM2355518", "category": "tires", "createdAt": "2026-01-15T08:00:00.000Z" },
+    { "id": 6, "brand": "Shop Service", "name": "Tire Mounting", "width": 0, "aspectRatio": 0, "rimSize": 0, "price": 200, "stock": 999, "barcode": "SVC-MOUNT", "category": "services", "serviceUnit": "Service", "createdAt": "2026-01-15T08:00:00.000Z" },
+    { "id": 7, "brand": "Shop Service", "name": "Wheel Balancing", "width": 0, "aspectRatio": 0, "rimSize": 0, "price": 150, "stock": 999, "barcode": "SVC-BAL", "category": "services", "serviceUnit": "Service", "createdAt": "2026-01-15T08:00:00.000Z" },
+    { "id": 8, "brand": "Shop Service", "name": "PMS Package", "width": 0, "aspectRatio": 0, "rimSize": 0, "price": 1200, "stock": 999, "barcode": "SVC-PMS", "category": "services", "serviceUnit": "Service", "createdAt": "2026-01-15T08:00:00.000Z" },
+    { "id": 9, "brand": "Shop Service", "name": "Labor", "width": 0, "aspectRatio": 0, "rimSize": 0, "price": 0, "stock": 999, "barcode": "SVC-LABOR", "category": "services", "serviceUnit": "Service", "createdAt": "2026-01-15T08:00:00.000Z" },
+    { "id": 10, "brand": "Misc", "name": "Valve Stem", "width": 0, "aspectRatio": 0, "rimSize": 0, "price": 50, "stock": 100, "barcode": "OTH-VALVE", "category": "other", "createdAt": "2026-01-15T08:00:00.000Z" }
+  ],
+  "customerProfiles": [
+    { "id": 1, "customerName": "Alex Rivera", "plateNumber": "DEM-1001", "vehicleMake": "Toyota", "vehicleModel": "Vios", "phoneNumber": "555-1001", "lastOdometer": 45200, "createdAt": "2026-02-01T10:00:00.000Z", "updatedAt": "2026-06-10T09:00:00.000Z" },
+    { "id": 2, "customerName": "Jamie Santos", "plateNumber": "DEM-2044", "vehicleMake": "Mitsubishi", "vehicleModel": "Montero", "phoneNumber": "555-2044", "lastOdometer": 82150, "createdAt": "2026-02-05T11:00:00.000Z", "updatedAt": "2026-06-11T14:30:00.000Z" },
+    { "id": 3, "customerName": "Taylor Cruz", "plateNumber": "DEM-3308", "vehicleMake": "Honda", "vehicleModel": "City", "phoneNumber": "555-3308", "lastOdometer": 31800, "createdAt": "2026-03-12T08:30:00.000Z", "updatedAt": "2026-06-12T16:00:00.000Z" }
+  ],
+  "serviceTickets": [
+    { "id": 1, "customerProfileId": 1, "customerName": "Alex Rivera", "plateNumber": "DEM-1001", "vehicleMake": "Toyota", "vehicleModel": "Vios", "status": "in_progress", "odometerReading": 45200, "notes": "4x tire replacement + balancing", "lineItems": [{ "productId": 1, "productName": "Tour Plus", "quantity": 4 }, { "productId": 7, "productName": "Wheel Balancing", "quantity": 4 }], "createdAt": "2026-06-13T08:00:00.000Z", "updatedAt": "2026-06-13T08:00:00.000Z" },
+    { "id": 2, "customerProfileId": 2, "customerName": "Jamie Santos", "plateNumber": "DEM-2044", "vehicleMake": "Mitsubishi", "vehicleModel": "Montero", "status": "waiting", "odometerReading": 82150, "notes": "PMS scheduled", "lineItems": [{ "productId": 8, "productName": "PMS Package", "quantity": 1 }], "createdAt": "2026-06-13T09:15:00.000Z", "updatedAt": "2026-06-13T09:15:00.000Z" }
+  ],
+  "sales": [
+    { "id": 1, "receiptNumber": "DEMO-20260610-00001", "totalAmount": 10400, "paymentMethod": "cash", "status": "completed", "syncStatus": "demo", "notes": null, "createdAt": "2026-06-10T10:30:00.000Z", "items": [{ "productId": 1, "productName": "Tour Plus", "brand": "RoadMaster", "tireSize": "205/55R16", "quantity": 2, "unitPrice": 5200, "subtotal": 10400 }] },
+    { "id": 2, "receiptNumber": "DEMO-20260611-00002", "totalAmount": 5750, "paymentMethod": "gcash", "status": "completed", "syncStatus": "demo", "notes": null, "createdAt": "2026-06-11T14:00:00.000Z", "items": [{ "productId": 2, "productName": "Highway Grip", "brand": "RoadMaster", "tireSize": "215/60R16", "quantity": 1, "unitPrice": 5750, "subtotal": 5750 }] },
+    { "id": 3, "receiptNumber": "DEMO-20260612-00003", "totalAmount": 1550, "paymentMethod": "cash", "status": "completed", "syncStatus": "demo", "notes": "Mount + balance", "createdAt": "2026-06-12T11:45:00.000Z", "items": [{ "productId": 6, "productName": "Tire Mounting", "brand": "Shop Service", "tireSize": "Service", "quantity": 4, "unitPrice": 200, "subtotal": 800 }, { "productId": 7, "productName": "Wheel Balancing", "brand": "Shop Service", "tireSize": "Service", "quantity": 4, "unitPrice": 150, "subtotal": 600 }, { "productId": 10, "productName": "Valve Stem", "brand": "Misc", "tireSize": "Other", "quantity": 3, "unitPrice": 50, "subtotal": 150 }] }
+  ],
+  "inventoryMovements": []
+}
