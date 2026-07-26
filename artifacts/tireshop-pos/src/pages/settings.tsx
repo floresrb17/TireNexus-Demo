@@ -8,8 +8,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { autoCapitalizeValue, notifySettingsUpdated, useAutoCapitalizationEnabled } from "@/lib/autocapitalize";
+import { isDemoMode } from "@/lib/demo-mode";
 import { Switch } from "@/components/ui/switch";
-import BirSettingsPage from "@/pages/bir-settings";
 
 type PosSettings = {
   storeName: string;
@@ -813,8 +813,6 @@ export default function Settings() {
               </CardContent>
             )}
           </Card>
-
-          <BirSettingsPage />
         </>
       )}
 
@@ -910,7 +908,11 @@ export default function Settings() {
           <CardHeader>
             <CardTitle>Create Account</CardTitle>
             <CardDescription>
-              {isAdmin ? "Add Cashier or Mechanic users for this local POS. The built-in admin account is the only admin." : "Add another Mechanic account for this station."}
+              {isDemoMode
+                ? "Adding local accounts is disabled in this portfolio demo."
+                : isAdmin
+                ? "Add Cashier or Mechanic users for this local POS. The built-in admin account is the only admin."
+                : "Add another Mechanic account for this station."}
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-5">
@@ -921,6 +923,7 @@ export default function Settings() {
                   id="accountUsername"
                   value={newAccount.username}
                   onChange={(event) => setNewAccount((current) => ({ ...current, username: event.target.value }))}
+                  disabled={isDemoMode}
                   data-testid="input-new-account-username"
                 />
               </div>
@@ -931,6 +934,7 @@ export default function Settings() {
                   type="password"
                   value={newAccount.password}
                   onChange={(event) => setNewAccount((current) => ({ ...current, password: event.target.value }))}
+                  disabled={isDemoMode}
                   data-testid="input-new-account-password"
                 />
               </div>
@@ -940,7 +944,7 @@ export default function Settings() {
                   id="accountRole"
                   value={newAccount.role}
                   onChange={(event) => setNewAccount((current) => ({ ...current, role: event.target.value }))}
-                  disabled={isMechanic}
+                  disabled={isDemoMode || isMechanic}
                   className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
                   data-testid="select-new-account-role"
                 >
@@ -950,7 +954,7 @@ export default function Settings() {
               </div>
               <Button
                 onClick={handleCreateAccount}
-                disabled={isSavingAccount || !newAccount.username.trim() || newAccount.password.length < 4}
+                disabled={isDemoMode || isSavingAccount || !newAccount.username.trim() || newAccount.password.length < 4}
                 data-testid="btn-create-account"
               >
                 Create
