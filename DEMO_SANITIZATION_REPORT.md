@@ -41,7 +41,7 @@ Scope: Public demo repository (`WGI-POS-Demo`) vs private production (`WGI-POS`)
 | Path | Change |
 | --- | --- |
 | `demo-api.cjs` | New lightweight API; no net cost, BIR, cloud sync, or updater routes |
-| `demo-data/demo-seed.json` | Fictional products, customers, tickets, and sales |
+| `demo-data/demo-seed.json` | Real, publicly known tire/wheel brand names on sample stock; fictional customers, tickets, and sales |
 | `README.md` | Portfolio-focused documentation with limitations |
 | `LICENSE-DEMO.md` | Demo-only legal terms |
 
