@@ -10,6 +10,7 @@
     "build": "pnpm --filter @workspace/tireshop-pos run build",
     "demo:api": "node demo-api.cjs",
     "demo:start": "node demo-api.cjs",
+    "demo:seed-smoke": "node scripts/seed-smoke-products.cjs",
     "desktop:dev": "pnpm --filter @workspace/tireshop-pos run build && electron desktop/main.cjs",
     "desktop:pack": "pnpm --filter @workspace/tireshop-pos run build && electron-builder --win --dir",
     "desktop:build": "pnpm --filter @workspace/tireshop-pos run build && electron-builder --win",
