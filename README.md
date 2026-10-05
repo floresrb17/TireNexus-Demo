@@ -2,6 +2,8 @@
 
 Portfolio demonstration of **WGI POS** — a proprietary tire shop point-of-sale and inventory management system built for real-world shop operations.
 
+> **Looking for TireNexus?** TireNexus is a cloud point-of-sale, inventory, quotation and customer-record system for tire shops, with Philippine peso pricing: **[www.tirenexus.co](https://www.tirenexus.co)**. This repository is a sanitized portfolio demo of the desktop edition (WGI POS), not the cloud product.
+
 > **Important:** This repository is a sanitized demo for portfolio and evaluation purposes only. The full production application, business logic, integrations, and customer data are **not** publicly available.
 
 ## Project Overview
